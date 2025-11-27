@@ -1,11 +1,16 @@
 # Blind Spatial Manifold Compression for Neural Interfaces
 
-**A geometry-aware compression framework for high-density neural probes (Neuralink N1).**
+## 🌟 [View the Live 3D Visualization](https://mnouira02.github.io/neuralink-manifold-compression/)
 
 ## 🧠 The Concept
 This project implements a blind calibration pipeline that recovers the **functional 3D geometry** of a neural electrode array solely from the correlation structure of the recorded noise and spikes. By mapping channels to a virtual 3D manifold, we can cluster spikes into **"Source Events"** (neurons) rather than channel events, achieving massive data compression.
 
-![Compression Visualization](./viz/neuralink_logo.png)
+## ⚠️ The Data Paradox 
+The Neuralink Challenge provided ~143MB of data, which represents roughly one hour of single-channel recording (or non-simultaneous segments). A real N1 implant generates ~90GB of simultaneous data per hour across 1,024 channels.
+
+To test my "Blind Spatial Manifold" hypothesis, I had to simulate the N1's architecture.
+
+I treated the provided sequential file segments as if they were simultaneous spatial channels. While this means the recovered geometry in this demo is a simulation based on the dataset's noise properties, the algorithm pipeline is exactly what would run on the physical chip to recover the real electrode positions.
 
 ## 🚀 Key Features
 * **Blind Geometry Discovery:** Uses Multidimensional Scaling (MDS) to reconstruct electrode positions without physical specs.
