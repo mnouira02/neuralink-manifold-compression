@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+env/
+
+# Data (Too big for GitHub)
+data/
+viz/viz_data/
+
+# OS Junk
+.DS_Store
+Thumbs.db

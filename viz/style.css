@@ -1,0 +1,196 @@
+/* Tron-inspired UI styling (dark + cyan + magenta) */
+:root {
+    --bg: #000000;
+    --panel-bg: rgba(0, 8, 12, 0.6);
+    --cyan: #00ffff;
+    --magenta: #ff00ff;
+    --lime: #00ff00;
+    --muted: rgba(0, 255, 255, 0.12);
+    --panel-border: rgba(0, 255, 255, 0.25);
+    --glass: rgba(0, 50, 50, 0.18);
+    font-family: "Consolas", "Courier New", monospace;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background: var(--bg);
+    overflow: hidden;
+}
+
+/* Base panels */
+.panel {
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.05);
+    color: var(--cyan);
+    padding: 12px;
+    border-radius: 8px;
+    backdrop-filter: blur(6px);
+    user-select: none;
+}
+
+/* Top-left metrics */
+#overlay-top-left {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    width: 260px;
+    z-index: 20;
+    font-size: 13px;
+}
+
+/* UI container */
+#ui-container {
+    position: absolute;
+    top: 14px;
+    left: calc(14px + 280px);
+    right: 14px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    pointer-events: auto;
+    z-index: 20;
+}
+
+/* left-controls small panel */
+#left-controls {
+    width: 280px;
+    max-height: 60vh;
+    overflow: auto;
+}
+
+/* right panel */
+#neuron-list-panel {
+    width: 320px;
+    max-height: 60vh;
+    overflow: auto;
+}
+
+/* Control rows */
+.control-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.control-row input[type="color"] {
+    width: 40px;
+    height: 26px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+/* Timeline container - bottom */
+#timeline-container {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    right: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 20;
+    pointer-events: auto;
+}
+
+#play-pause {
+    background: rgba(0, 10, 20, 0.6);
+    color: var(--cyan);
+    border: 1px solid var(--panel-border);
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* timeline bar */
+#timeline {
+    height: 14px;
+    background: #070707;
+    border: 1px solid rgba(0, 255, 255, 0.08);
+    flex-grow: 1;
+    position: relative;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: inset 0 0 20px rgba(0, 255, 255, 0.02);
+}
+
+#time-head {
+    position: absolute;
+    top: -4px;
+    left: 0;
+    width: 10px;
+    height: 22px;
+    background: var(--cyan);
+    border-radius: 4px;
+    box-shadow: 0 0 12px var(--cyan);
+    pointer-events: none;
+}
+
+/* Time display */
+#time-display {
+    color: var(--cyan);
+    font-size: 13px;
+    min-width: 130px;
+    text-align: right;
+}
+
+/* Neuron list */
+.neuron-list {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.neuron-item {
+    padding: 6px 6px;
+    border-bottom: 1px dashed rgba(0, 255, 255, 0.03);
+    transition: color 0.35s, font-weight 0.35s, background 0.6s;
+    cursor: default;
+}
+
+.neuron-item .meta {
+    display: block;
+    font-size: 11px;
+    color: rgba(0, 255, 255, 0.35);
+}
+
+.neuron-active {
+    color: white !important;
+    font-weight: 700;
+    background: linear-gradient(90deg, rgba(0, 255, 255, 0.06), rgba(255, 0, 255, 0.02));
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.08);
+}
+
+/* small notes */
+.small-note {
+    font-size: 11px;
+    color: rgba(0, 255, 255, 0.35);
+    margin-top: 8px;
+}
+
+/* responsive tweaks */
+@media (max-width: 1000px) {
+    #ui-container {
+        left: 14px;
+        right: 14px;
+        flex-direction: column;
+        gap: 12px;
+        top: 14px;
+    }
+
+    #left-controls,
+    #neuron-list-panel {
+        width: 100%;
+        max-height: 200px;
+    }
+
+    #overlay-top-left {
+        display: none;
+    }
+}
