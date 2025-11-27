@@ -34,7 +34,9 @@ python src/demo_pipeline.py
 This will generate the geometry and events logs in viz/viz_data/
 
 ### 3. Launch the Visualization
-To view the 3D dashboard, serve the root directory via HTTP:
+(Pre-computed demo data is included, so you can skip Step 2!)
+
+To view the 3D dashboard, simply serve the root directory:
 ```bash
 python -m http.server 8000
 ```
