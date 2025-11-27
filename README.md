@@ -2,6 +2,8 @@
 
 ## 🌟 [View the Live 3D Visualization](https://mnouira02.github.io/neuralink-manifold-compression/)
 
+### 📖 [Read the Story on Medium](https://medium.com/@mnouira/i-broke-the-rules-to-solve-the-neuralink-challenge-88949bccbf45)
+
 ## 🧠 The Concept
 This project implements a blind calibration pipeline that recovers the **functional 3D geometry** of a neural electrode array solely from the correlation structure of the recorded noise and spikes. By mapping channels to a virtual 3D manifold, we can cluster spikes into **"Source Events"** (neurons) rather than channel events, achieving massive data compression.
 
